@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>画布功能Test1--矩形、圆形、线、文本</title>
+</head>
+<body>
+   <article>
+       <header>
+           <h3>eg1:在canvas画布上画矩形</h3>
+       </header>
+       <canvas id="myCanvas1" height="200" width="200" style="border:1px solid #ddd">
+           你的浏览器不支持 HTML5 canvas 标签。
+       </canvas>
+   </article>
+   <article>
+       <header>
+           <h3>eg2:在canvas画布上划线</h3>
+       </header>
+       <canvas id="myCanvas2" height="200" width="200" style="border:1px solid #ddd">
+           你的浏览器不支持 HTML5 canvas 标签。
+       </canvas>
+   </article>
+
+   <article>
+       <header>
+           <h3>eg3:在canvas画布上绘制圆形</h3>
+       </header>
+       <canvas id="myCanvas3" height="200" width="200" style="border:1px solid #ddd">
+           你的浏览器不支持 HTML5 canvas 标签。
+       </canvas>
+   </article>
+
+   <article>
+       <header>
+           <h3>eg4:在canvas画布上绘制文本</h3>
+       </header>
+       <canvas id="myCanvas4" height="200" width="200" style="border:1px solid #ddd">
+           你的浏览器不支持 HTML5 canvas 标签。
+       </canvas>
+   </article>
+
+
+   <script type="text/javascript">
+       /* eg1:绘制矩形 */
+       //获取画布对象
+       var cvs1 = document.getElementById("myCanvas1");
+       //获取context对象
+       var ctx1 = cvs1.getContext("2d");
+       //颜色填充
+       ctx1.fillStyle = "#ccc";
+       //矩形填充 fillRect(x,y,width,height) 方法定义了矩形当前的填充方式。
+       ctx1.fillRect(20,20,100,100);
+
+       /*eg2:在画布上面划线 */
+       var cvs2 = document.getElementById("myCanvas2");
+       var ctx2 = cvs2.getContext("2d");
+       //moveTo表示线条开始的地方
+       ctx2.moveTo(0,0);
+       //lineTo表示线条结束的地方
+       ctx2.lineTo(200,200);
+       //stroke表示连线
+       ctx2.stroke();
+
+      /*eg3:绘制圆形 arc(x,y,r,start,stop)
+      * x表示圆的中心的x坐标，y表示圆的中心的y坐标
+      * r表示圆的半径,start表示开始角一般设置为0，stop表示结束角2*Math.PI
+      * */
+      var cvs3 = document.getElementById("myCanvas3");
+      var ctx3 = cvs3.getContext("2d");
+      //ctx3.beginPath();
+      ctx3.arc(40,40,40,0,2*Math.PI);
+      ctx3.stroke();
+
+       /*eg4:绘制文本
+       * font - 定义字体
+       * fillText(text,x,y) - 在 canvas 上绘制实心的文本
+       * strokeText(text,x,y) - 在 canvas 上绘制空心的文本
+       * */
+       var cvs4 = document.getElementById("myCanvas4");
+       var ctx4 = cvs4.getContext("2d");
+       ctx4.font="30px Arial";
+       //ctx4.fillText("Hello World",10,50);
+       ctx4.strokeText("HelloWorld",30,40);
+
+
+
+   </script>
+</body>
+</html>
