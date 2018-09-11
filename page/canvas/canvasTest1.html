@@ -3,6 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>画布功能Test1--矩形、圆形、线、文本</title>
+    <style>
+        article{
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
    <article>
@@ -12,30 +17,40 @@
        <canvas id="myCanvas1" height="200" width="200" style="border:1px solid #ddd">
            你的浏览器不支持 HTML5 canvas 标签。
        </canvas>
-   </article>
-   <article>
+
        <header>
            <h3>eg2:在canvas画布上划线</h3>
        </header>
        <canvas id="myCanvas2" height="200" width="200" style="border:1px solid #ddd">
            你的浏览器不支持 HTML5 canvas 标签。
        </canvas>
-   </article>
 
-   <article>
        <header>
            <h3>eg3:在canvas画布上绘制圆形</h3>
        </header>
        <canvas id="myCanvas3" height="200" width="200" style="border:1px solid #ddd">
            你的浏览器不支持 HTML5 canvas 标签。
        </canvas>
-   </article>
 
-   <article>
        <header>
            <h3>eg4:在canvas画布上绘制文本</h3>
        </header>
        <canvas id="myCanvas4" height="200" width="200" style="border:1px solid #ddd">
+           你的浏览器不支持 HTML5 canvas 标签。
+       </canvas>
+
+       <header>
+           <h3>eg5:在canvas画布上颜色渐变</h3>
+       </header>
+       <canvas id="myCanvas5" height="200" width="200" style="border:1px solid #ddd">
+           你的浏览器不支持 HTML5 canvas 标签。
+       </canvas>
+
+       <header>
+           <h3>eg6:在canvas画布上放置图片</h3>
+       </header>
+       <img id="scream" src="../images/img_the_scream.jpg" alt="The Scream" width="220" height="277" style="display: none;"/>
+       <canvas id="myCanvas6" height="300" width="300" style="border:1px solid #ddd">
            你的浏览器不支持 HTML5 canvas 标签。
        </canvas>
    </article>
@@ -82,6 +97,37 @@
        ctx4.font="30px Arial";
        //ctx4.fillText("Hello World",10,50);
        ctx4.strokeText("HelloWorld",30,40);
+
+       /*eg5:渐变效果
+       * 1. createLinearGradient(x,y,x1,y1) - 创建线条渐变,x/y表示渐变点开始的坐标，x1/y1表示渐变点结束的坐标
+       * 2.createRadialGradient(x,y,r,x1,y1,r1) - 创建一个径向/圆渐变，x/y/r开始的圆的圆形坐标和半径
+       * ctx.addColorStop()方法指定颜色停止，参数使用坐标来描述，可以是0至1.
+       *
+       * */
+       var cvs5 = document.getElementById("myCanvas5");
+       var ctx5 = cvs5.getContext("2d");
+       /*// 创建渐变
+       var grd = ctx5.createLinearGradient(0,0,100,100);
+       grd.addColorStop(0,"red");
+       grd.addColorStop(1,'#fff');
+       //渐变填充
+       ctx5.fillStyle = grd;
+       ctx5.fillRect(0,0,200,100);*/
+       // 创建渐变
+       var grd=ctx5.createRadialGradient(75,50,5,90,60,100);
+       grd.addColorStop(0,"red");
+       grd.addColorStop(1,"white");
+       // 填充渐变
+       ctx5.fillStyle=grd;
+       ctx5.fillRect(10,10,150,80);
+
+       /*eg6: 在画布上面放图片
+       * drawImage(image,x,y)
+       * */
+       var cvs6 = document.getElementById("myCanvas6");
+       var ctx6 = cvs6.getContext("2d");
+       var img=document.getElementById("scream");
+       ctx6.drawImage(img,10,10);
 
 
 
