@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>拖拽示例1</title>
+    <style type="text/css">
+        #div1 {width:350px;height:70px;padding:10px;border:1px solid #aaaaaa;}
+    </style>
+    <script type="text/javascript">
+        /*ondragover 放到何处,阻止浏览器的默认行为，不允许将数据拖放*/
+        function allowDrop(ev) {
+            ev.preventDefault();
+        }
+
+        /*ondragstart事件--拖拽时发生的动作*/
+        function drag(ev) {
+            //dataTransfer对象用来存储剪贴板的数据
+            ev.dataTransfer.setData("Text",ev.target.id);
+        }
+        /*ondrop事件--进行放置*/
+        function drop(ev) {
+            ev.preventDefault();
+            var data=ev.dataTransfer.getData("Text");
+            ev.target.appendChild(document.getElementById(data));
+        }
+    </script>
+</head>
+<body>
+<p>拖动logo图片到矩形框中:</p>
+<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+<br>
+<img id="drag1" src="../images/logo.png" draggable="true" ondragstart="drag(event)" width="336" height="69">
+</body>
+</html>
