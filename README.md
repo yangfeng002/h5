@@ -45,14 +45,12 @@ html5已经被常用浏览器广泛支持，但是IE9以下的浏览器支持的
 3.aside 配合article使用，是内容以外的部分
 4.nav 导航使用标签
 5.header 页眉可以在section也可以在article标签中，可以如下使用
-   <pre>
-    <article>
+    <!--<article>
         <header>
             <h1>Internet Explorer 9</h1>
             <p><time pubdate datetime="2011-03-15"></time></p>
         </header>
-    </article>
-    </pre>
+    </article>-->
 6.footer页脚  标签定义文档或者文档的一部分区域的页脚。
 7.time标签 IE9及以上
 8.progress标签  IE10及以上
