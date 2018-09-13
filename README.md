@@ -38,7 +38,8 @@ html5已经被常用浏览器广泛支持，但是IE9以下的浏览器支持的
 表单元素===================
 1.datalist表单和input配合使用
 2.output元素（部分浏览器支持）
-
+3.input类型
+  color 、 date 、datetime、datetime-local、email、month、number、range、search、tel、time、url、week、
 
 语义和结构元素===============****
 1.section 块
