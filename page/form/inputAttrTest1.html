@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>input的相关属性示例</title>
+</head>
+<body>
+   <!--autofocus属性-->
+   <p><strong>autofocus属性：自动获取焦点，注意：</strong> Internet Explorer 9及更早 IE 版本不支持 input 标签的 autofocus 属性。</p>
+   <form action="demo-form.php">
+       First name: <input type="text" name="fname" autofocus><br>
+       Last name: <input type="text" name="lname"><br>
+       <input type="submit">
+   </form>
+   <!--required属性-->
+   <p><b>required属性,注意：</b> Internet Explorer 9及更早 IE 版本，或 Safari 不支持 input 标签的 required 属性。</p>
+   <form action="demo-form.php">
+       Username: <input type="text" name="usrname" required>
+       <input type="submit">
+   </form>
+
+   <!--placeholder属性-->
+   <p><strong>placeholder属性，注意：</strong> Internet Explorer 9及更早 IE 版本不支持 input 标签的 placeholder 属性。</p>】
+   <form action="demo-form.php">
+       <input type="text" name="fname" placeholder="First name"><br>
+       <input type="text" name="lname" placeholder="Last name"><br>
+       <input type="submit" value="提交">
+   </form>
+  <!--height和width属性，width和height属性一般是image标签使用，并且可以提交表单-->
+   <p><strong>width和height属性</strong></p>
+   <form action="demo-form.php">
+       <input type="text" name="fname" placeholder="First name"><br>
+       <input type="text" name="lname" placeholder="Last name"><br>
+       <input type="image" alt="submit" src="../images/img_submit.gif" width="36" height="36"/>
+   </form>
+
+
+
+
+
+
+   <!--form属性-->
+   <p><b>form属性，注意:</b> IE 不支持 form 属性</p>
+   <form action="demo-form.php" id="form1">
+       First name: <input type="text" name="fname"><br>
+       <input type="submit" value="提交">
+   </form>
+
+   <p> "Last name" 字段没有在 form 表单之内，但它也是 form 表单的一部分。</p>
+
+   Last name: <input type="text" name="lname" form="form1">
+
+  <!--step属性-->
+   <p><b>step属性，注意:</b> Internet Explorer 9及更早 IE 版本，或 Firefox 不支持 input 标签的 step 属性。</p>
+   <form action="demo-form.php">
+       <input type="number" name="points" step="3" required>
+       <input type="submit">
+   </form>
+   <!--list属性，规定域-->
+   <p><strong>注意:</strong> Internet Explorer 9（更早 IE 版本），Safari 不支持 datalist 标签。</p>
+   <form action="demo-form.php" method="get">
+       <input list="browsers" name="browser">
+       <datalist id="browsers">
+           <option value="Internet Explorer">
+           <option value="Firefox">
+           <option value="Chrome">
+           <option value="Opera">
+           <option value="Safari">
+       </datalist>
+       <input type="submit">
+   </form>
+
+
+
+
+
+</body>
+</html>
