@@ -5,6 +5,14 @@
     <title>form表单属性</title>
 </head>
 <body>
+<form action="demo-form.php" autocomplete="on">
+    First name:<input type="text" name="fname"><br>
+    Last name: <input type="text" name="lname"><br>
+    E-mail: <input type="email" name="email" autocomplete="off"><br>
+    <input type="submit">
+</form>
 
+<p>填写并提交表单，然后重新刷新页面查看如何自动填充内容。</p>
+<p>注意 form 的 autocomplete 属性为  "on"（开），但是 e-mail 自动为“off”（关）。</p>
 </body>
 </html>
