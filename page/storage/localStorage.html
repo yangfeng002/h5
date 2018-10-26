@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>localStorage本地数据存储示例</title>
+    <script type="text/javascript" src="../../lib/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+<div id="result"></div>
+<script>
+    // Check browser support
+    if (typeof(Storage) !== "undefined") {
+        // Store
+        localStorage.setItem("lastname", "Gates");
+        // Retrieve
+        $("#result").html(localStorage.getItem("lastname"));
+    } else {
+        $("#result").html("抱歉！您的浏览器不支持 Web Storage ...");
+    }
+</script>
+
+</body>
+</html>
